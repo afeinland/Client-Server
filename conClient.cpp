@@ -35,6 +35,16 @@ void error(const char * msg)
     exit(-1);
 }
 
+/* BEGIN SERVER INTERFACE FUNCTIONS */
+
+void send_data(const int fd, const char * msg)
+{
+    if( write(fd, msg, strlen(msg)) < 0 )
+        error("CLIENT: ERROR SENDING MSG TO SERVER ");
+}
+
+/* END SERVER INTERFACE FUNCTIONS */
+
 
 /* BEGIN THREAD FUNCTIONS */
 
@@ -54,9 +64,37 @@ void make_empty_dir(Thread_data & t_data)
 
     sprintf(dirname, "Thread%dfiles", t_data.id);
     mkdir(dirname, mode);
+    cout << "Created directory: " << dirname << endl;
     t_data.newdir = dirname;
 }
 
+void send_filename_to_server(const Thread_data & t_data)
+{
+    send_data(t_data.fd, t_data.file);
+}
+
+void create_local_name(const Thread_data & t_data, char localname[])
+{
+    char *f = rindex(t_data.file, '/');
+
+    if(!f)
+        error("CLIENT: ERROR rindex()");
+
+    sprintf(localname, "./%s/%s", t_data.newdir, f+1);
+}
+
+void copy_file_to_dir(Thread_data & t_data)
+{
+    char localname[BUFSIZ];
+
+    // send file name to server
+    send_filename_to_server(t_data);
+
+    // create local file path
+    create_local_name(t_data, localname);
+    cout << "local file name: " << localname << endl;
+    //copy file data
+}
 
 
 void * download_file_from_server(void * data)
@@ -64,11 +102,11 @@ void * download_file_from_server(void * data)
     struct Thread_data * t_data = (struct Thread_data *)data;
 
     make_empty_dir(*t_data);
-    //cout << "id: " << t_data->id << " fd: " << t_data->fd << " file: " << t_data->file << endl;
-    cout << "newdirname: " << t_data->newdir << endl;
+
+    copy_file_to_dir(*t_data);
 
 
-
+    pthread_exit(NULL);
     return NULL;
 }
 /* END THREAD FUNCTIONS */
