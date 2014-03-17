@@ -1,0 +1,41 @@
+Script started on Mon 17 Mar 2014 07:37:47 AM PDT
+~
+afein001@well $ cd cs200/hw/hw9[C[C[C[C[1P00/hw/hw9100/hw/hw9
+~/cs100/hw/hw9
+afein001@well $ ./conClient well.cs.ucr.edu ~/test.test 5
+Client: Socket Created
+Created directory: Thread2files
+local file name: ./Thread2f F hÿ/test.test
+Created directory: Thread0files
+local file name: ./Thread0f`F hÿ/test.test
+Created directory: Thread4files
+~/cs100/hw/hw9
+afein001@well $ 
+~/cs100/hw/hw9
+afein001@well $ ls
+[0m[0mclient.log[0m  [0mconClient.cpp[0m  [0mconServer.cpp[0m  [0mPortNumber.h[0m  [0mserver.log[0m     [01;34mThread1files[0m/  [01;34mThread3files[0m/
+[01;32mconClient[0m*  [01;32mconServer[0m*     [0mMakefile[0m       [0mREADME.md[0m     [01;34mThread0files[0m/  [01;34mThread2files[0m/  [01;34mThread4files[0m/
+[m~/cs100/hw/hw9
+afein001@well $ rmdir Thrr[Kead*
+~/cs100/hw/hw9
+afein001@well $ ls
+[0m[0mclient.log[0m  [01;32mconClient[0m*  [0mconClient.cpp[0m  [01;32mconServer[0m*  [0mconServer.cpp[0m  [0mMakefile[0m  [0mPortNumber.h[0m  [0mREADME.md[0m  [0mserver.log[0m
+[m~/cs100/hw/hw9
+afein001@well $ lsrmdir Thread*ls[K./conClient well.cs.ucr.edu ~/test.test 5[K3
+Client: Socket Created
+Created directory: Thread0files
+local file name: ./Thread0f >O–ÿ/test.test
+Created directory: Thread1files
+local file name: ./Thread1fÀ>O–ÿ/test.test
+Created directory: Thread2files
+~/cs100/hw/hw9
+afein001@well $ ls
+[0m[0mclient.log[0m  [0mconClient.cpp[0m  [0mconServer.cpp[0m  [0mPortNumber.h[0m  [0mserver.log[0m     [01;34mThread1files[0m/
+[01;32mconClient[0m*  [01;32mconServer[0m*     [0mMakefile[0m       [0mREADME.md[0m     [01;34mThread0files[0m/  [01;34mThread2files[0m/
+[m~/cs100/hw/hw9
+afein001@well $ ls./conClient well.cs.ucr.edu ~/test.test 3[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Krmdir Thread*
+~/cs100/hw/hw9
+afein001@well $ exit
+exit
+
+Script done on Mon 17 Mar 2014 07:39:29 AM PDT

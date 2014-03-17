@@ -1,0 +1,33 @@
+Script started on Mon 17 Mar 2014 07:37:10 AM PDT
+~
+afein001@well $ cd cs100/hw/hw9
+~/cs100/hw/hw9
+afein001@well $ m
+make: Nothing to be done for `all'.
+~/cs100/hw/hw9
+afein001@well $ m clean
+rm -f conServer conClient
+~/cs100/hw/hw9
+afein001@well $ m
+g++ -ggdb -Wall conServer.cpp -pthread -o conServer
+g++ -ggdb -Wall conClient.cpp -pthread -o conClient
+~/cs100/hw/hw9
+afein001@well $ 
+~/cs100/hw/hw9
+afein001@well $ ./conServer 
+Server: Socket created
+
+
+dirName from client: /home/csmajs/afein001/test.test
+clientFD: 4 dir: /home/csmajs/afein001/test.test
+file: /home/csmajs/afein001/test.test
+dirName from client: /home/csmajs/afein001/test.test
+clientFD: 5 dir: /home/csmajs/afein001/test.test
+file: /home/csmajs/afein001/test.test
+exit
+
+~/cs100/hw/hw9
+afein001@well $ ./conServer [Kexit
+exit
+
+Script done on Mon 17 Mar 2014 07:39:42 AM PDT
